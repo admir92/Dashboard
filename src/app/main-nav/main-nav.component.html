@@ -1,0 +1,52 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [(opened)]="opened">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item 
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="active"
+        routerLink="/"> <mat-icon>home</mat-icon> <span class="nav-caption"> Home</span></a>
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/dashboard"> <mat-icon>dashboard</mat-icon> <span class="nav-caption"> Dashboard</span></a>
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/organization"> <mat-icon>domain</mat-icon> <span class="nav-caption"> Organization</span></a>
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/registri"> <mat-icon>content_paste</mat-icon> <span class="nav-caption"> Registri</span></a>  
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/approvazioni"> <mat-icon>assignment_late</mat-icon> <span class="nav-caption"> Approvazioni</span></a>  
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/impatto"> <mat-icon>verified_user</mat-icon> <span class="nav-caption"> Impatto</span></a> 
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/informative"> <mat-icon>info</mat-icon> <span class="nav-caption"> Informative</span></a>
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/violazioni"> <mat-icon>flash_on</mat-icon> <span class="nav-caption"> Violazioni</span></a>  
+       <a mat-list-item 
+        routerLinkActive="active"
+        routerLink="/cataloghi"> <mat-icon>local_library</mat-icon> <span class="nav-caption"> Cataloghi</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button 
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span> dashboard</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

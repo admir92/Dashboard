@@ -1,24 +1,162 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
+  <div class="right-menu">
+    <mat-list role="list" style="border-left: 1px solid #d5d5d5;">
+      <!-- <mat-list-item role="listitem" *ngFor="let fixLi of fixLis; let i = index;">{{fixLi.title}}</mat-list-item> -->
+      <mat-nav-list  role="navigation" class="mat-nav-list mat-list-base dashboard-navigation ng-star-inserted" 
+      style="top: 90px; left: 1308.5px;">
+      <mat-list-item *ngFor="let fixLi of fixLis" class="mat-list-item mat-focus-indicator scrollNow">
+        <div class="mat-list-item-content">
+          <div mat-ripple="" class="mat-ripple mat-list-item-ripple">
+          </div>
+          <div class="mat-list-text">
+          </div>
+         <a href="{{fixLi.link}}" >{{fixLi.title}}</a>
+         </div>
+        </mat-list-item>
+        
+      </mat-nav-list>
+  
+    </mat-list>
+  </div>
+  <div class="main-content">
+  <mat-grid-list cols="4" rowHeight="300px">
+    <mat-grid-tile colspan="4" rowspan="1">
+      <mat-card class="dashboard-card card-1">
+       
           <mat-card-title>
-            {{card.title}}
-            <!-- <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu> -->
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </mat-card-title>
-        </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi posuere molestie accumsan.
+             Sed id lacus mauris. Morbi vulputate rhoncus neque, in commodo risus mollis vel. Donec nunc turpis,
+             mattis vitae elit in, molestie iaculis orci. Pellentesque habitant morbi tristique senectus et netus 
+             et malesuada fames ac turpis egestas.
+          </div>
+          <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select >
+              <mat-option value="option1">Lorem Ipsum</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <bar-rating [(rate)]="rate" [max]="5"></bar-rating>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
+   
   </mat-grid-list>
+    <p class="dashboard-section-title" id="organization" ><b>Organization</b> urabitur in finibus lacus nam accumsan celerisque</p>
+
+    <mat-grid-list cols="4" [gutterSize]="'0px'" rowHeight="160px">
+    
+      <mat-grid-tile  *ngFor="let organization of organizations" [colspan]="organization.cols" [rowspan]="organization.rows">
+        <mat-card [ngStyle]="{'background-color': organization.activeColor}" class="dashboard-card">
+          
+          <span class="material-icons right-icon">
+            error_outline
+            </span>
+          <mat-card-content class="dashboard-card-content">
+            {{organization.description}}
+            <div class="numberdiv"><span class="numberpercentage">{{organization.number}}</span> %</div>
+          </mat-card-content>
+        
+        </mat-card>
+      </mat-grid-tile>
+      
+    </mat-grid-list>
+
+<p class="dashboard-section-title" id="asset"><b>Asset</b> urabitur in finibus lacus nam accumsan celerisque</p>
+
+<mat-grid-list  cols="4" [gutterSize]="'0px'" rowHeight="160px">
+
+  <mat-grid-tile  *ngFor="let asset of assets" [colspan]="asset.cols" [rowspan]="asset.rows">
+    <mat-card [ngStyle]="{'background-color': asset.activeColor}" class="dashboard-card">
+      
+      <span class="material-icons right-icon">
+        error_outline
+        </span>
+      <mat-card-content class="dashboard-card-content">
+        {{asset.description}}
+        <div class="numberdiv"><span class="numberpercentage">{{asset.number}}</span> %</div>
+      </mat-card-content>
+     
+    </mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
+<p class="dashboard-section-title" id="trattamenti"><b>Trattamenti</b> urabitur in finibus lacus nam accumsan celerisque</p>
+
+<mat-grid-list  cols="4" [gutterSize]="'0px'" rowHeight="160px">
+ 
+  <mat-grid-tile  *ngFor="let trattamenti of trattamenties" [colspan]="trattamenti.cols" [rowspan]="trattamenti.rows">
+    <mat-card [ngStyle]="{'background-color': trattamenti.activeColor}" class="dashboard-card">
+      
+      <span class="material-icons right-icon">
+        error_outline
+        </span>
+      <mat-card-content class="dashboard-card-content">
+        {{trattamenti.description}}
+        <div class="numberdiv"><span class="numberpercentage">{{trattamenti.number}}</span> %</div>
+      </mat-card-content>
+     
+    </mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
+<p class="dashboard-section-title" id="informative"><b>Informative</b> urabitur in finibus lacus nam accumsan celerisque</p>
+<mat-grid-list  cols="4" [gutterSize]="'0px'" rowHeight="160px">
+ 
+  <mat-grid-tile *ngFor="let informative of informatives" [colspan]="informative.cols" [rowspan]="informative.rows">
+    <mat-card  [ngStyle]="{'background-color': informative.activeColor}" class="dashboard-card">
+      
+      <span class="material-icons right-icon">
+        error_outline
+        </span>
+      <mat-card-content class="dashboard-card-content">
+        {{informative.description}}
+        <div class="numberdiv"><span class="numberpercentage">{{informative.number}}</span> %</div>
+      </mat-card-content>
+     
+    </mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
+<p class="dashboard-section-title" id="impatto"><b>Impatto</b> urabitur in finibus lacus nam accumsan celerisque</p>
+<mat-grid-list  cols="4" [gutterSize]="'0px'" rowHeight="160px">
+ 
+  <mat-grid-tile *ngFor="let impatto of impattos" [colspan]="impatto.cols" [rowspan]="impatto.rows">
+    <mat-card [ngStyle]="{'background-color': impatto.activeColor}" class="dashboard-card">
+      
+      <span class="material-icons right-icon">
+        error_outline
+        </span>
+      <mat-card-content class="dashboard-card-content">
+        {{impatto.description}}
+        <div class="numberdiv"><span class="numberpercentage">{{impatto.number}}</span> %</div>
+      </mat-card-content>
+     
+    </mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
+<p class="dashboard-section-title" id="violazzioni"><b>Violazzioni</b> urabitur in finibus lacus nam accumsan celerisque</p>
+<mat-grid-list  cols="4" [gutterSize]="'0px'" rowHeight="160px">
+ 
+  <mat-grid-tile  *ngFor="let violazzioni of violazzionies" [colspan]="violazzioni.cols" [rowspan]="violazzioni.rows">
+    <mat-card [ngStyle]="{'background-color': violazzioni.activeColor}" class="dashboard-card">
+      
+      <span class="material-icons right-icon">
+        error_outline
+        </span>
+      <mat-card-content class="dashboard-card-content">
+        {{violazzioni.description}}
+        <div class="numberdiv"><span class="numberpercentage">{{violazzioni.number}}</span> %</div>
+      </mat-card-content>
+     
+    </mat-card>
+  </mat-grid-tile>
+  
+</mat-grid-list>
+</div>
+
 </div>

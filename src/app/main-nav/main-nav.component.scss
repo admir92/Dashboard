@@ -7,6 +7,19 @@ $white-color: #fff;
     width: 200px;
     background: $base-color;
     .mat-nav-list {
+      padding: 30px 0;
+      .bottomStick {
+        position: absolute;
+        bottom: 0;
+      }
+      .bottomRelative {
+        position: relative;
+      }
+      .slide-toggle {
+        color: $white-color;
+        margin: 20px;
+      }
+
       a {
         color: $white-color;
         &.active {
@@ -20,8 +33,28 @@ $white-color: #fff;
       }
     }
   }
+  .td-navigation-drawer-name {
+    width: 90%;
+    display: block;
+    margin: 20px auto;
+    span {
+      padding: 20px;
+      background-color: $white-color;
+      border-radius: 100%;
+    }
+  }
   .mat-toolbar {
     background-color: $base-color;
-    color: $white-color;
+    & a {
+      color: $white-color;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .toggle-button,
+    span {
+      color: $white-color;
+    }
   }
 }

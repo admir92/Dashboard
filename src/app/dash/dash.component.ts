@@ -8,26 +8,110 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./dash.component.scss']
 })
 export class DashComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+rate = 5;
+  organizations =
+      [
+        { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, activeColor: 'blue', cols: 2, rows: 1},
+        { description: 'General', number: 25, bgColor: 'blue', cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
+
       ];
-    })
-  );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+      assets =
+      [
+        { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, activeColor: 'blue', cols: 2, rows: 1},
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+
+
+      ];  
+
+      trattamenties =
+      [
+        { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, activeColor: 'blue', cols: 2, rows: 1},
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+
+
+      ];  
+
+      informatives =
+      [
+        { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, activeColor: 'blue', cols: 2, rows: 1},
+         { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, cols: 2, rows: 1},
+         { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, cols: 2, rows: 1},
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+
+      ];  
+
+      impattos =
+      [
+        { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, activeColor: 'blue', cols: 2, rows: 1},
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+
+      ]; 
+
+      violazzionies =
+      [
+        { description: 'Curabitur in finibus lacus nam accumsan celerisque',
+         number: 25, activeColor: 'blue', cols: 2, rows: 1},
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+        { description: 'General', number: 25, cols: 1, rows: 1 },
+
+      ]; 
+
+      fixLis=[
+      {title: 'Organization', link: '/dashboard#organization'}, 
+      {title: 'Asset', link: '/dashboard#asset'},
+      {title: 'Trattamenti ', link: '/dashboard#trattamenti'},
+      {title: 'Informative ', link: '/dashboard#informative'},
+      {title: 'Impatto ', link: '/dashboard#impatto'},
+      {title: 'Violazzioni ', link: '/dashboard#violazzioni'},
+    
+    ]
+     
+      
+
 }

@@ -13,7 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
-import { DashComponent } from './dash/dash.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -24,6 +23,14 @@ import { ImpattoComponent } from './impatto/impatto.component';
 import { InformativeComponent } from './informative/informative.component';
 import { ViolazioniComponent } from './violazioni/violazioni.component';
 import { CataloghiComponent } from './cataloghi/cataloghi.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { DashComponent } from './dash/dash.component';
+import { BarRatingModule } from "ngx-bar-rating";
+
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -43,12 +50,12 @@ const appRoutes: Routes = [
     AppComponent,
     MainNavComponent,
     HomeComponent,
-    DashComponent,
     OrganizationComponent,
     ApprovazioniComponent,
     InformativeComponent,
     ViolazioniComponent,
-    CataloghiComponent
+    CataloghiComponent,
+    DashComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSlideToggleModule,
+    MatBadgeModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    BarRatingModule 
+  
   ],
   providers: [Title],
   bootstrap: [AppComponent]

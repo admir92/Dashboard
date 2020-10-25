@@ -15,7 +15,49 @@
   top: 5px;
   right: 10px;
 }
+.card-1 {
+  padding: 20px;
+}
+.right-icon {
+  float: right;
+}
+.main-content {
+  width: 80%;
+  display: inline-block;
+}
+.right-menu {
+  // width: 20%;
+  display: inline-block;
+  position: fixed;
+  right: 0;
+  @media only screen and (max-width: 1024px) {
+    position: relative;
+  }
+  padding: 30px;
+}
+.mat-card-content {
+  font-size: 16px;
+}
+.numberpercentage {
+  font-size: 30px;
+  color: #dedede;
+}
+.mat-form-field {
+  width: 100%;
+}
+.numberdiv {
+  margin-top: 20px !important;
+}
+.dashboard-section-title {
+  padding: 20px 20px 0 20px;
+  font-size: 18px;
+}
+::ng-deep
+  .mat-form-field-type-mat-select:not(.mat-form-field-disabled)
+  .mat-form-field-flex {
+  background-color: transparent !important;
+}
 
-.dashboard-card-content {
-  text-align: center;
+.br-unit.br-selected.ng-star-inserted {
+  font-size: 30px !important;
 }
